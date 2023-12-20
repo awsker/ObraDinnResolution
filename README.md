@@ -13,7 +13,7 @@ This mod is a [BepinEx 5](https://github.com/BepInEx/BepInEx) plugin that increa
 ## Usage
 The plugin will use your Windows desktop resolution when starting the game as its target resolution. 
 You can use Nvidia DSR (Nvidia Control Panel -> 3D Settings -> DSR Factors) to set up a custom resolution much higher than your monitor supports and then launch the game.
-When starting the game, it's possible the main menu is very small. If you can't see the "Begin" button, it's possible it's hiding in the clouds. Be careful when clicking so you don't accidentally remove your save game.
+When starting the game, it's possible the main menu is very small. If you can't see the "Begin" button, it could be hiding in the clouds. Be careful when clicking around so you don't accidentally remove your save game.
 The plugin will hide all blur effects (edge blur, edge wave, blur from explosions and guns and even the blur over some gore effects)
 
 ## Known issues
