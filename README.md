@@ -4,7 +4,7 @@ BepinEx 5 plugin to increase the rendering resolution of Return of the Obra Dinn
 
 ## Installation
 Download and install the latest release of [BepinEx 5 32-bit](https://github.com/BepInEx/BepInEx/releases) (The zip with x86 in its name). Unzip it into your Obra Dinn directory.
-Download the [latest release](https://github.com/awsker/ObraDinnResolution/releases) of ResolutionFix and unzip it into your BepinEx\Plugins directory.
+Download the [latest release](https://github.com/awsker/ObraDinnResolution/releases) of ResolutionFix.zip and unzip it into your BepinEx\Plugins directory.
 
 ## Usage
 The plugin will use your Windows desktop resolution when starting the game as its target resolution. 
