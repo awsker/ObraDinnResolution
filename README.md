@@ -1,6 +1,8 @@
 # Obra Dinn Resolution Mod
 
-BepinEx 5 plugin to increase the rendering resolution of Return of the Obra Dinn. This is a rough first draft and can not be used to play through the entire game. The plugin and its code is provided as-is with no guarantees.
+![20231216003331_1](https://github.com/awsker/ObraDinnResolution/assets/604653/7a7b4b47-90b7-46e8-9533-e6b01fa35788)
+
+This mod is a [BepinEx 5](https://github.com/BepInEx/BepInEx) plugin that increases the rendering resolution of Return of the Obra Dinn. This is a rough first draft and can not be used to play through the entire game. The plugin and its code is provided as-is with no guarantees.
 
 ## Installation
 * Download and install the latest release of [BepinEx 5 32-bit](https://github.com/BepInEx/BepInEx/releases) (The zip with x86 in its name)
