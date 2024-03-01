@@ -9,6 +9,8 @@ namespace ResolutionFix
     [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
     public class Plugin : BaseUnityPlugin
     {
+        public static bool IsHighRes { get; set; } = true;
+
         private void Awake()
         {
             // Plugin startup logic
@@ -17,7 +19,7 @@ namespace ResolutionFix
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly());
 
             SceneManager.sceneLoaded += sceneManager_sceneLoaded;
-            //SceneManager.activeSceneChanged += sceneManager_activeSceneChanged;
+            SceneManager.activeSceneChanged += sceneManager_activeSceneChanged;
         }
 
         private void sceneManager_sceneLoaded(Scene scene, LoadSceneMode mode)
@@ -26,10 +28,36 @@ namespace ResolutionFix
             fixScene();
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.F9))
+            {
+                IsHighRes = !IsHighRes;
+            }
+            if (Input.GetKeyDown(KeyCode.Tab)) // hack so the book displays fullscreen
+            {
+                IsHighRes = !IsHighRes;
+            }
+        }
+
+        private void sceneManager_activeSceneChanged(Scene scene1, Scene scene2)
+        {
+            var sceneName = scene2.name;
+            if (sceneName == "Book" || sceneName == "Title" || sceneName == "Pause")
+            {
+                IsHighRes = false;
+            }
+            else
+            {
+                IsHighRes = true;
+            }
+
+        }
+
         private void fixScene()
         {
             var scene = SceneManager.GetActiveScene();
-            
+
             foreach (var root in scene.GetRootGameObjects())
             {
                 /*
