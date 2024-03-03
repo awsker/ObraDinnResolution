@@ -22,22 +22,19 @@ namespace ResolutionFix
             SceneManager.activeSceneChanged += sceneManager_activeSceneChanged;
         }
 
-        private void sceneManager_sceneLoaded(Scene scene, LoadSceneMode mode)
-        {
-            Logger.LogInfo($"   SCENE LOADED: " + scene.name);
-            fixScene();
-        }
-
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.F9))
             {
                 IsHighRes = !IsHighRes;
             }
-            if (Input.GetKeyDown(KeyCode.Tab)) // hack so the book displays fullscreen
-            {
-                IsHighRes = !IsHighRes;
-            }
+
+        }
+
+        private void sceneManager_sceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            Logger.LogInfo($"   SCENE LOADED: " + scene.name);
+            fixScene();
         }
 
         private void sceneManager_activeSceneChanged(Scene scene1, Scene scene2)
