@@ -9,6 +9,7 @@ namespace ResolutionFix
         [HarmonyPatch(typeof(Dialog), "Play")]
         public static void Prefix_Play()
         {
+            // low res while dialogue text is showing
             Plugin.IsHighRes = false;
         }
 
@@ -18,5 +19,14 @@ namespace ResolutionFix
         {
             Plugin.IsHighRes = true;
         }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(Dialog), "SwitchToAudioOnly")]
+        public static void Prefix_SwitchToAudioOnly()
+        {
+            // high res if user skips audio
+            Plugin.IsHighRes = true;
+        }
+
     }
 }
