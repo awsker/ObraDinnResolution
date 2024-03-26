@@ -9,6 +9,7 @@ namespace ResolutionFix
         [HarmonyPatch(typeof(Book), "OnEnable")]
         public static void Prefix_OnEnable()
         {
+            // low res when opening the book
             Plugin.IsHighRes = false;
         }
 

@@ -7,7 +7,7 @@ namespace ResolutionFix
     {
         [HarmonyPrefix]
         [HarmonyPatch(typeof(Settings), nameof(Settings.outputModeIsFramed), MethodType.Getter)]
-        public static bool Prefix_BufferW_Get(ref bool __result)
+        public static bool Prefix_OutputModeIsFramed_Get(ref bool __result)
         {
             __result = false;
             return false;
